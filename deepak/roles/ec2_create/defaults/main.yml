@@ -1,0 +1,11 @@
+---
+
+my_instance_type: t2.micro
+my_image: ami-f63b1193
+my_key_name: deepak-ohio
+my_region: us-east-2
+instance_exact_count: 1
+my_ip: yes
+my_subnet_id: subnet-38e45f43
+my_security_group: sg-d875a9b3
+my_instance_name: deepak-db-test

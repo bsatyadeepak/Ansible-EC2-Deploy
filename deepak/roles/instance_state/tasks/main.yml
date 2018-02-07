@@ -1,0 +1,19 @@
+---
+
+- name: Collecting instance details and Filtering my_instance_state
+  ec2_remote_facts:
+    region: "{{ my_region }}"
+    filters:
+      "tag:Name": "{{ my_instance_name }}"
+  register: my_instances
+
+- name: printing facts of instances
+  debug:
+    msg: "{{ my_instances }}"
+
+- name: Defining and Execute State of Instance
+  ec2:
+    region: "{{ my_region }}"
+    state: "{{ my_instance_state }}"
+    instance_id: "{{ item.id }}"
+  with_items: "{{ my_instances.instances }}"

@@ -1,0 +1,5 @@
+---
+
+my_region: us-east-2
+my_instance_name: sudeep
+my_instance_state: running

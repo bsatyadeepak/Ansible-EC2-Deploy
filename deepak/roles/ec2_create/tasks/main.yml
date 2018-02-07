@@ -1,0 +1,18 @@
+---
+
+- name: Create EC2 Instance
+  ec2:
+    region: "{{ my_region }}"
+    image: "{{ my_image }}"
+    vpc_subnet_id: "{{ my_subnet_id }}"
+    key_name: "{{ my_key_name }}"
+    instance_type: "{{ my_instance_type }}"
+    exact_count: "{{ instance_exact_count }}"
+    group_id: "{{ my_security_group }}"
+    assign_public_ip: "{{ my_ip }}"
+    wait: yes
+    instance_tags:
+      Name: "{{ my_instance_name }}"
+    count_tag:
+      Name: "{{ my_instance_name }}"
+  register: my_instance_info
